@@ -72,8 +72,7 @@ bash Tools/TestRunner/run-tests.sh
 
 ## Design decisions
 
-- **Exit only on safe/super zones.** The document states this rule explicitly, so it was followed even though the original card game allows leaving at any time.
+- **Exit only on safe/super zones.** In the original Critical Strike card mode, the player can leave before any spin, on any zone. The document says the player can leave only when the wheel is not spinning **and** the zone is safe or super, so this build follows the document: exit is enabled only between spins on safe and super zones.
 - **"Rewards get better every zone"** is implemented as `amount = base × (1 + (zone − 1) × growth)`, with growth 10% set in `ZoneProgressionSO`. The silver and golden wheels also carry better rewards. Slice contents are fixed per wheel type. Making contents improve over zones could be added by giving each zone type a list of `WheelConfigSO`s, one per zone range; the session already reads its wheels from data.
 - **Revive costs gold from a wallet.** The wallet is kept separate from the run rewards: a bomb clears the run but not the wallet. **Starting gold is 100**, so reviewers can try revive and reach zone 30 without grinding. Change it in `ZoneProgressionSO`. The wallet is not saved between app launches; persistence was out of scope.
 - **Super zone special reward.** It is picked at random from a pool at the start of each 30-zone cycle and shown in advance in the top-right box. Reaching the zone opens a claim popup, then the golden wheel is spun.
-- **Unused provided assets.** Three reward icons are byte-identical duplicates of used ones (`Pistol_Points_`, `Submachine_Points`, `Vest_Points`). Five more reward icons have no free slot, because each wheel has 8 slices and all of them are already in use. `ui_card_panel_zone_current` (blue) is the alternative color of `_current_white`; the white one matches the zone bar's color scheme.
