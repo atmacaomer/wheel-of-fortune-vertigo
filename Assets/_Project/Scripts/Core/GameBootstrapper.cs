@@ -11,6 +11,9 @@ namespace VertigoCase.Core
     // into plain rule objects, creates the session and hands it to the views. No singletons needed.
     public sealed class GameBootstrapper : MonoBehaviour
     {
+        // Unity caps mobile builds at 30 fps unless a target is set; the wheel and fly animations need 60.
+        private const int TargetFrameRate = 60;
+
         [SerializeField] private ZoneProgressionSO _progression;
         [SerializeField] private WheelView _wheelView;
         [SerializeField] private ZoneBarView _zoneBarView;
@@ -35,6 +38,11 @@ namespace VertigoCase.Core
             if (_bombPopupView == null) _bombPopupView = FindAnyObjectByType<BombPopupView>(FindObjectsInactive.Include);
             if (_cashOutPopupView == null) _cashOutPopupView = FindAnyObjectByType<CashOutPopupView>(FindObjectsInactive.Include);
             if (_specialRewardPopupView == null) _specialRewardPopupView = FindAnyObjectByType<SpecialRewardPopupView>(FindObjectsInactive.Include);
+        }
+
+        private void Awake()
+        {
+            Application.targetFrameRate = TargetFrameRate;
         }
 
         // Start (not Awake) so every view has finished its own Awake/OnEnable first.
