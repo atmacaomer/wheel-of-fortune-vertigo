@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ca984feedede243a5531160201a6ba, type: 3}
+  m_Name: Wheel_Bronze
+  m_EditorClassIdentifier:
+  _title: BRONZE SPIN
+  _titleColor: {r: 0.95, g: 0.62, b: 0.32, a: 1}
+  _baseSprite: {fileID: 21300000, guid: 214114be20ee80547b61931ad4803a1f, type: 3}
+  _indicatorSprite: {fileID: 21300000, guid: d0c6fbcd0bb79d34895195c9ccfce3f4, type: 3}
+  _showRays: 1
+  _rotateRays: 0
+  _raysColor: {r: 0.85, g: 0.5, b: 0.25, a: 0.2}
+  _slices:
+  - _reward: {fileID: 11400000, guid: 8d47de0cbf447de9f13c5987a1b2c3a9, type: 2}
+    _baseAmount: 0
+    _weight: 2
+  - _reward: {fileID: 11400000, guid: 065c480a4f49c56a18dcacb9a7ccdc4c, type: 2}
+    _baseAmount: 10
+    _weight: 3
+  - _reward: {fileID: 11400000, guid: 08c26067e613d0d9b7d2ac1397108b33, type: 2}
+    _baseAmount: 5
+    _weight: 2
+  - _reward: {fileID: 11400000, guid: a67f2aa2cf413c693714aa3c990f4aa6, type: 2}
+    _baseAmount: 1
+    _weight: 1
+  - _reward: {fileID: 11400000, guid: adfc01be86c4897a33824b6077a45120, type: 2}
+    _baseAmount: 100
+    _weight: 3
+  - _reward: {fileID: 11400000, guid: 50bebadd9d2a210325f43a0414709fa3, type: 2}
+    _baseAmount: 2
+    _weight: 2
+  - _reward: {fileID: 11400000, guid: d0745e3b43e0a77b0bfad528627581d2, type: 2}
+    _baseAmount: 5
+    _weight: 2
+  - _reward: {fileID: 11400000, guid: 0d20faff5bdcd138ca170d0f694a0643, type: 2}
+    _baseAmount: 1
+    _weight: 2
